@@ -48,9 +48,10 @@
                     <div class="col-xl-7">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Securely connect your front-end web app to API's, in minutes</h1>
+                            <h1 class="mb-3">Securely connect your front-end web app to API's, in minutes</h1>
                             <div class="col-auto">
-                                <a href="https://app.easyoauth.com" target="_blank" class="btn btn-primary btn-lg">Try Now!</a>
+                                <a href="https://app.easyoauth.com" target="_blank" class="btn btn-primary btn-lg mt-3">Try Now!</a>
+                                <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-secondary btn-lg ms-sm-3 mt-3">Watch a Demo</button>
                                 <p class="mb-0 mt-3">Easyoauth is still in beta!</p>
                             </div>
                         </div>
@@ -181,7 +182,8 @@
                     <div class="col-xl-6">
                         <h2 class="mb-4">Ready to get started?</h2>
                         <div class="col-auto">
-                            <a href="https://app.easyoauth.com" target="_blank" class="btn btn-primary btn-lg">Try Now!</a>
+                            <a href="https://app.easyoauth.com" target="_blank" class="btn btn-primary btn-lg mt-3">Try Now!</a>
+                            <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-secondary btn-lg ms-sm-3 mt-3">Watch a Demo</button>
                             <p class="mb-0 mt-3">Easyoauth is still in beta!</p>
                         </div>
                     </div>
@@ -222,9 +224,37 @@
                 </div>
             </div>
         </footer>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Easyoauth Demo</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mdQ9RSmBsNM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+                var myModalEl = document.getElementById('exampleModal')
+                myModalEl.addEventListener('hidden.bs.modal', function (event) {
+                    var iframe = document.querySelector('iframe');
+                    if ( iframe ) {
+                        var iframeSrc = iframe.src;
+                        iframe.src = iframeSrc;
+                    }
+                });
+        </script>
     </body>
 </html>
